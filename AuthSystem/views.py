@@ -12,6 +12,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
+from .models import bool_model,profile_img
+
 def home(request):
     return render(request, "index.html")
 
@@ -136,3 +138,26 @@ def loginUser(request):
 def logOutUser(request):
     logout(request)
     return redirect("home")
+
+
+
+
+
+def Profile(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        
+        # Retrieve the bool_model instance related to the user
+        isPay = bool_model.objects.get(user=user)
+        profile_image=profile_img.objects.get(user=user)
+        
+        print(isPay)
+        # isPay=""
+        context = {
+            'pdb': user,
+            'profile_image':profile_image,
+            'isPay': isPay,
+        }
+        return render(request, "profile.html", context)
+    else:
+        return redirect("login")

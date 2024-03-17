@@ -33,14 +33,16 @@
                 </div>
 
                 {% if user.is_authenticated %}
+                {% if request.resolver_match.url_name != 'profile' %}
                 <div class="ham">
                     <a style="padding: 5px 10px ;"  class="neon" href="{% url 'logout' %}">
                         <span></span><span></span>
                         <span></span><span></span>
                         Log out
                     </a>
-                    <a href="#" class="btn">Profile</a>
+                    <a href="{% url 'profile' user.id%}" class="btn">Profile</a>
                 </div>
+                {% endif %}
                 {% else %}
                 <div class="ham">
                     <a class="neon" href="{% url 'login' %}">
