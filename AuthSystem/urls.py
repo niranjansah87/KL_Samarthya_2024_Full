@@ -7,4 +7,5 @@ urlpatterns = [
     path("logout/",logOutUser , name="logout"),
     path("",home, name="home"),
     path('user/<int:pk>/profile/',Profile,name="profile"),
+    
 ]

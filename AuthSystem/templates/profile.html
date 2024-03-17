@@ -11,6 +11,7 @@
             <source src="{% static 'videos/about.mp4' %}" type="video/mp4">
           </video>
 <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
         <div class="container">
             
                 <div class="image">
@@ -52,22 +53,26 @@
             <div class="imgBx">
                 {% if profile_image %}
                 
+                
                 <!-- <input type="file" name="prof_img" id="prof_img"> -->
                 <img src="{{profile_image.img.url}}" id="prof_img" alt="Profile Image">
                   {% else %}
                 <img src="{% static 'images/Kutumb_Head (2).png' %}">
                 {% endif %}
             </div>
+            
             <div class="content">
                 <div class="details">
+                    
                     <h2>{{pdb.first_name}}<br><span>{{pdb.username}}</span></h2>
                     <div class="data">
+                        <!-- <h3><br><span></span></h3>
                         <h3><br><span></span></h3>
-                        <h3><br><span></span></h3>
-                        <h3><br><span></span></h3>
+                        <h3><br><span></span></h3> -->
                     </div>
                     <div class="actionBtn">
                         
+                        <button type="submit">Update</button>
                         <button style="margin-left: 90px; width:110px;">Go back</button>
                         <!-- <button>Message</button> -->
                     </div>

@@ -13,6 +13,7 @@ from django.contrib import messages
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from .models import bool_model,profile_img
+from .forms import ProfileUpdateForm
 
 def home(request):
     return render(request, "index.html")
@@ -150,7 +151,7 @@ def Profile(request, pk):
         # Retrieve the bool_model instance related to the user
         isPay = bool_model.objects.get(user=user)
         profile_image=profile_img.objects.get(user=user)
-        
+
         print(isPay)
         # isPay=""
         context = {
@@ -161,3 +162,17 @@ def Profile(request, pk):
         return render(request, "profile.html", context)
     else:
         return redirect("login")
+
+def updateProfile(request):
+    user=request.user.user
+    form=ProfileUpdateForm(instance=user)
+    if request.method=="POST":
+        form=ProfileUpdateForm(request.POST,request.FILES,instance=user)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ProfileUpdateForm(instance=request.user.profile)
+    return render(request, 'profile.html', {'form': form})
+
+
+
