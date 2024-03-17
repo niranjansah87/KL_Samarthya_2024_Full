@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+  
+    <title>Navbar</title>
+</head>
+<body>
+    <!-- <div id="loader-wrapper">
+        <video id="loader-video" autoplay muted>
+            <source src="./samarthya loader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div> -->
+
+    <div id="content">
+        <nav>
+            <div class="header container">
+                <div class="logo">
+                    <a href="#"><img style="width:120px;" src="logo.png" alt=""></a>
+                </div>
+                <div class="navlinks">
+                    <ul>
+                        <li class="active"><a href="#" class="link">Home</a></li>
+                        <li><a href="#" class="link">Events</a></li>
+                        <li><a href="#" class="link">Gallery</a></li>
+                        <li><a href="#" class="link">Team</a></li>
+                        <li><a href="#" class="link">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="ham">
+                    <a class="neon" href="#">
+                        <span></span><span></span>
+                        <span></span><span></span>
+                        Login
+                    </a>
+                    <a class="btn">Register</a>
+                </div>
+            </div>
+            <canvas id="canvas"></canvas>
+        </nav>
+    </div>
+
+    <div class="gradient"></div>
+
+    <script src="navbar.js"></script>
+    <script>
+        window.onload = function() {
+            var loader = document.getElementById('loader-wrapper');
+            var content = document.getElementById('content');
+            var loaderVideo = document.getElementById('loader-video');
+
+            loaderVideo.addEventListener('ended', function() {
+                loader.style.display = 'none';
+                content.style.display = 'block';
+            });
+        };
+    </script>
+</body>
+</html>
