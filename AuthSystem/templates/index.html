@@ -1,9 +1,12 @@
+{% load static %}
+
+{% static "" %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
@@ -11,18 +14,13 @@
     <title>Navbar</title>
 </head>
 <body>
-    <!-- <div id="loader-wrapper">
-        <video id="loader-video" autoplay muted>
-            <source src="./samarthya loader.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div> -->
+   
 
     <div id="content">
         <nav>
             <div class="header container">
                 <div class="logo">
-                    <a href="#"><img style="width:120px;" src="logo.png" alt=""></a>
+                    <a href="{% url 'home' %}"><img style="width:120px;" src="{% static 'images/logo.png' %}" alt=""></a>
                 </div>
                 <div class="navlinks">
                     <ul>
@@ -33,14 +31,28 @@
                         <li><a href="#" class="link">About Us</a></li>
                     </ul>
                 </div>
+
+                {% if user.is_authenticated %}
                 <div class="ham">
-                    <a class="neon" href="#">
+                    <a style="padding: 5px 10px ;"  class="neon" href="3">
+                        <span></span><span></span>
+                        <span></span><span></span>
+                        Log out
+                    </a>
+                    <a href="{% url 'logout' %}" class="btn">Profile</a>
+                </div>
+                {% else %}
+                <div class="ham">
+                    <a class="neon" href="{% url 'login' %}">
                         <span></span><span></span>
                         <span></span><span></span>
                         Login
                     </a>
-                    <a class="btn">Register</a>
+                    <a href="{% url 'signup' %}" class="btn">Register</a>
                 </div>
+               
+                  
+                {% endif %}
             </div>
             <canvas id="canvas"></canvas>
         </nav>
@@ -48,7 +60,7 @@
 
     <div class="gradient"></div>
 
-    <script src="navbar.js"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
     <script>
         window.onload = function() {
             var loader = document.getElementById('loader-wrapper');
