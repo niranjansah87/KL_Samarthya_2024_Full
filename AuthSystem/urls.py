@@ -1,7 +1,6 @@
-# from django.urls import path
-# from .views import loginUser, logOutUser, register,Profile
+from django.urls import path
+from .views import loginUser, logOutUser,home, register,Profile
 
-# urlpatterns = [
-    
-    
-# ]
+urlpatterns = [
+    path('',home,name="home"),
+]

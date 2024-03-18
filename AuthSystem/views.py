@@ -15,10 +15,8 @@ from django.core.exceptions import ValidationError
 from .models import bool_model,profile_img
 from .forms import ProfileUpdateForm
 
-
-
-
-
+# def home(request):
+#     return render(request, "index.html")
 # def register(request):
 #     if request.method == 'POST':
 #         username = request.POST['username']
