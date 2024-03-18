@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>KL Samarthya 2024</title>
-  <link rel="stylesheet" href="./css/gallery.css">
-  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
   <!-- <link rel="stylesheet" href="navbar.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
- 
+  
   <video autoplay muted loop id="myVideo">
-    <source src="./about.mp4" type="video/mp4">
+    <source src="{% static 'videos/about.mp4' %}" type="video/mp4">
   </video>
 
 
@@ -21,24 +21,23 @@
   <nav>
       <div class="header container">
           <div class="logo">
-              <a href="./index.html"><img style="width:120px;" src="logo.png" alt=""></a>
+              <a href="{% url 'home' %}"><img style="width:120px;" src="{% static 'images/logo.png' %}" alt=""></a>
           </div>
           <div class="navlinks">
-              <ul>
-                  <li class="active"><a href="./index.html" class="link">Home</a></li>
-                  <li><a href="./carousel.html" class="link">Events</a></li>
-                  <li><a href="./gallery.html" class="link">Gallery</a></li>
-                  <li><a href="./team.html" class="link">Team</a></li>
-                  <li><a href="./about.html" class="link">About Us</a></li>
-              </ul>
+            <ul>
+              <li class="active"><a href="{% url 'home' %}" class="link">Home</a></li>
+              <li><a href="{% url 'events' %}" class="link">Events</a></li>
+              <li><a href="{% url 'gallery' %}" class="link">Gallery</a></li>
+              <li><a href="{% url 'team' %}" class="link">Team</a></li>
+              <li><a href="{% url 'about' %}" class="link">About Us</a></li>
+            </ul>
           </div>
           <div class="ham">
-              <a class="neon" href="./login.html">
-                  <span></span><span></span>
-                  <span></span><span></span>
-                  Login
-              </a>
-              <a href="./signup.html" class="btn">Register</a>
+            <a class="neon" href="{% url 'login' %}">
+              <span></span><span></span> <span></span><span></span>
+              Login
+            </a>
+            <a href="{% url 'signup' %}" class="btn">Register</a>
           </div>
       </div>
       <canvas id="canvas"></canvas>
@@ -53,35 +52,33 @@
   <h1>Click on the carousel</h1>
   <div class="carousel" onclick="onClick()" onmousemove="onMouseMove(event)">
     <div>
-      <img src="./images/1.jpg" />
+      <img src="{% static 'images/1.jpg' %}" />
     </div>
     <div>
-      <img src="./images/2.jpg" />
+      <img src="{% static 'images/2.jpg' %}" />
     </div>
     <div>
-      <img src="./images/9.jpg" />
+      <img src="{% static 'images/9.jpg' %}" />
     </div>
     <div>
-      <img src="./images/4.jpg" />
+      <img src="{% static 'images/4.jpg' %}" />
     </div>
     <div>
-      <img src="./images/5.jpg" />
+      <img src="{% static 'images/5.jpg' %}" />
     </div>
     <div>
-      <img src="./images/6.jpg" />
+      <img src="{% static 'images/6.jpg' %}" />
     </div>
     <div>
-      <img src="./images/7.jpg" />
+      <img src="{% static 'images/7.jpg' %}" />
     </div>
     <div>
-      <img src="./images/8.jpg" />
+      <img src="{% static 'images/8.jpg' %}" />
     </div>
-    
-</main>
 
+</main>
 <!-- partial -->
-  <script  src="./js/gallery.js"></script>
-  <script src="./js/navbar.js"></script>
-  
+  <script src="{% static 'js/gallery.js' %}"></script>
+  <script src="{% static 'js/navbar.js' %}"></script>
 </body>
 </html>

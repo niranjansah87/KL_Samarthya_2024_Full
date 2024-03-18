@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Samarthya 2024</title>
-    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
     <!-- <link rel="stylesheet" href="./css/navbar.css"> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link
@@ -31,12 +32,12 @@
   </head>
   <body>
     <video autoplay muted loop id="myVideo">
-      <source src="./gallery.mp4" type="video/mp4">
+      <source src="{% static 'videos/gallery.mp4' %}" type="video/mp4">
     </video>
     <!-- MainContainer -->
     <div class="loader">
       <video autoplay muted id="loader-video">
-        <source src="./samarthya loader.mp4" type="video/mp4">
+        <source src="{% static 'videos/samarthya loader.mp4' %}" type="video/mp4">
       </video>
     </div>
     
@@ -45,23 +46,23 @@
       <nav>
         <div class="header container">
           <div class="logo">
-            <a href="./index.html"><img style="width: 120px" src="logo.png" alt="" /></a>
+            <a href="{% url 'home' %}"><img style="width: 120px" src="{% static 'images/logo.png' %}" alt="" /></a>
           </div>
           <div class="navlinks">
             <ul>
-              <li class="active"><a href="./index.html" class="link">Home</a></li>
-              <li><a href="./carousel.html" class="link">Events</a></li>
-              <li><a href="./gallery.html" class="link">Gallery</a></li>
-              <li><a href="./team.html" class="link">Team</a></li>
-              <li><a href="./about.html" class="link">About Us</a></li>
+              <li class="active"><a href="{% url 'home' %}" class="link">Home</a></li>
+              <li><a href="{% url 'events' %}" class="link">Events</a></li>
+              <li><a href="{% url 'gallery' %}" class="link">Gallery</a></li>
+              <li><a href="{% url 'team' %}" class="link">Team</a></li>
+              <li><a href="{% url 'about' %}" class="link">About Us</a></li>
             </ul>
           </div>
           <div class="ham">
-            <a class="neon" href="./login.html">
+            <a class="neon" href="{% url 'login' %}">
               <span></span><span></span> <span></span><span></span>
               Login
             </a>
-            <a href="./signup.html" class="btn">Register</a>
+            <a href="{% url 'signup' %}" class="btn">Register</a>
           </div>
         </div>
         <canvas id="canvas"></canvas>
@@ -94,14 +95,15 @@
         </div>
         <!-- AboutSamarthyaRight -->
         <div class="AboutSamarthyaRight">
-          <img src="./images/klsamarthya.jpg" alt="3" />
+          
+          <img src="{% static 'images/klsamarthya.jpg' %}" alt="3" />
         </div>
       </div>
       <!-- AboutTheme -->
       <div class="AboutTheme">
         <!-- AboutThemeLeft -->
         <div class="AboutThemeLeft">
-          <img src="./images/klsamarthya1.jpg" alt="3" />
+          <img src="{% static 'images/klsamarthya1.jpg' %}" alt="3" />
         </div>
         <!-- AboutThemeRight -->
         <div class="AboutThemeRight">
@@ -118,7 +120,7 @@
       <div class="AboutKLU">
         <!-- AboutKLULeft -->
         <div class="AboutKLULeft">
-          <img src="./images/kl.jpeg" alt="4" />
+          <img src="{% static 'images/kl.jpeg' %}" alt="4" />
         </div>
         <!-- AboutKLURight -->
         <div class="AboutKLURight">
@@ -185,11 +187,11 @@ Spread over a large campus of 100 acres, KL University offers a wide range of pr
 		
     
 	
-	
+   
     
    
 
-    <script src="./js/navbar.js"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const loaderVideo = document.getElementById('loader-video');

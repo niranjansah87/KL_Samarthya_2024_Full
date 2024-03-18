@@ -21,26 +21,25 @@
     
     <nav>
         <div class="header container">
-            <div class="logo">
-                <a href="./index.html"><img style="width:120px;" src="./logo.png" alt=""></a>
-            </div>
-            <div class="navlinks">
-                <ul>
-                    <li class="active"><a href="./index.html" class="link">Home</a></li>
-                    <li><a href="./carousel.html" class="link">Events</a></li>
-                    <li><a href="./gallery.html" class="link">Gallery</a></li>
-                    <li><a href="./team.html" class="link">Team</a></li>
-                    <li><a href="./about.html" class="link">About Us</a></li>
-                </ul>
-            </div>
-            <div class="ham">
-                <a class="neon" href="./login.html">
-                    <span></span><span></span>
-                    <span></span><span></span>
-                    Login
-                </a>
-                <a href="./signup.html" class="btn">Register</a>
-            </div>
+          <div class="logo">
+            <a href="{% url 'home' %}"><img style="width: 120px" src="{% static 'images/logo.png' %}" alt="" /></a>
+          </div>
+          <div class="navlinks">
+            <ul>
+              <li class="active"><a href="{% url 'home' %}" class="link">Home</a></li>
+              <li><a href="{% url 'events' %}" class="link">Events</a></li>
+              <li><a href="{% url 'gallery' %}" class="link">Gallery</a></li>
+              <li><a href="{% url 'team' %}" class="link">Team</a></li>
+              <li><a href="{% url 'about' %}" class="link">About Us</a></li>
+            </ul>
+          </div>
+          <div class="ham">
+            <a class="neon" href="{% url 'login' %}">
+              <span></span><span></span> <span></span><span></span>
+              Login
+            </a>
+            <a href="{% url 'signup' %}" class="btn">Register</a>
+          </div>
         </div>
         <canvas id="canvas"></canvas>
     </nav>
