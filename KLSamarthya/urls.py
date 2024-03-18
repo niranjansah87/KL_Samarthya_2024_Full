@@ -19,12 +19,16 @@ from django.urls import path,include
 
 from django.conf.urls.static import static
 from django.conf import settings
-
+from KLSamarthyaApp.views import index
+from AuthSystem.views import loginUser, logOutUser, register,Profile
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include('KLSamarthyaApp.urls')),
-    # path('/',home),
-    path("user/",include('AuthSystem.urls'))
+    path('',index,name="home"),
+    path("signup/",register, name="signup"),
+    path("login/",loginUser , name="login"),
+    path("logout/",logOutUser , name="logout"),
+    path('user/<int:pk>/profile/',Profile,name="profile"),
 ]
 
 # Serving static files during development
