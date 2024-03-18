@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include('KLSamarthyaApp.urls')),
     # path('/',home),
-    path("",include('AuthSystem.urls'))
+    path("user/",include('AuthSystem.urls'))
 ]
 
 # Serving static files during development
