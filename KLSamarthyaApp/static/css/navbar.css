@@ -16,14 +16,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-:root{
-    --color-black:#212529;
-    --color-white:#ecfffd;
-}
- 
-body{
-    background-color: black;
-}
 .header{
     display: flex;
     justify-content:space-around;
