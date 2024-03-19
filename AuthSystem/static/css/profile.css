@@ -29,6 +29,7 @@ body{
 
 
 .container{
+    margin-top: -25px;
     right: 90px;
     top: 80px;
     position: relative;
@@ -83,7 +84,7 @@ body{
     border-radius: 16px;
 }
 .form-box{
-    margin-top: -5px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
