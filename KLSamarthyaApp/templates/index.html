@@ -170,21 +170,35 @@
         color: var(--color-black);
       }
 
-      .navlink ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* navlink-style: none; */
-        gap: 2vw;
-      }
+   
 
-      .navlink ul a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        font-size: 1.1vw;
-      }
+
+
+      
+      @media screen and (max-width: 600px) {
+        .navlinks a:not(:first-child) {
+            display: none;
+        }
+        .navlinks a.icon {
+            display: block;
+        }
+        .navlinks.responsive {
+            flex-direction: column;
+            position:relative;
+            top: 50px; /* Adjust as needed */
+            left: 5px;
+            background-color: #333; /* Adjust background color as needed */
+            width: 100%;
+            padding-top: 30px;
+            z-index: 1000; /* Ensure it's above other content */
+        }
+        .navlinks.responsive a {
+            display: block;
+            text-align: center;
+            padding: 10px 0; /* Adjust padding as needed */
+            border-bottom: 1px solid #fff; /* Adjust border color as needed */
+        }
+    }
     </style>
   </head>
 
@@ -234,12 +248,13 @@
 
               <!-- Navigation -->
               <nav>
+                
                 <div class="header container nav-height" style="display: flex;
                 justify-content:space-around;
                 align-items: center;
                 height: 40px;
                 padding: 0 2vw;">
-                  <div class="navlinks" style="navlink-style: none;
+                  <div class="navlinks" id="myTopnav" style="navlink-style: none;
                   display: flex;
                   align-items: center;
                   gap: 40px;">
@@ -280,6 +295,8 @@
                         letter-spacing: 0.05em;
                         font-size: 1.1vw;">About Us</a>
                       </li>
+                      <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i> -->
                     </ul>
                   </div>
                   {% if user.is_authenticated %} 
@@ -309,6 +326,9 @@
 
                   {% endif %}
                 </div>
+                <a href="javascript:void(0);" class="icon" style="display: none;" onclick="toggleNav()">
+                  <i class="fa fa-bars"></i>
+              </a>
               </nav>
               <!--/Navigation -->
 
@@ -716,10 +736,16 @@
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/wow.min.js' %}"></script>
 
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-    </div>
+    
   </body>
+  <script>
+    function toggleNav() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "navlinks") {
+          x.className += " responsive";
+      } else {
+          x.className = "navlinks";
+      }
+  }
+  </script>
 </html>
