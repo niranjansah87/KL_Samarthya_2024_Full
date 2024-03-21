@@ -194,19 +194,42 @@
               <nav>
                 <div class="header container">
                   <div class="navlinks">
-                    <ul>
+                    <ul style=" display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2vw;">
                       <li class="active">
-                        <a href="{% url 'home' %}" class="link">Home</a>
+                        <a href="{% url 'home' %}" class="link" style="color: white;
+                        text-decoration: none;
+                        font-weight: 600;
+                        letter-spacing: 0.05em;
+                        font-size: 1.1vw;">Home</a>
                       </li>
                       <li>
-                        <a href="{% url 'events' %}" class="link">Events</a>
+                        <a href="{% url 'events' %}" class="link" style="color: white;
+                        text-decoration: none;
+                        font-weight: 600;
+                        letter-spacing: 0.05em;
+                        font-size: 1.1vw;">Events</a>
                       </li>
                       <li>
-                        <a href="{% url 'gallery' %}" class="link">Gallery</a>
+                        <a data-type="page-transition" href="{% url 'gallery' %}" class="link" style="color: white;
+                        text-decoration: none;
+                        font-weight: 600;
+                        letter-spacing: 0.05em;
+                        font-size: 1.1vw;">Gallery</a>
                       </li>
-                      <li><a href="{% url 'team' %}" class="link">Team</a></li>
+                      <li><a href="{% url 'team' %}" class="link" style="color: white;
+                        text-decoration: none;
+                        font-weight: 600;
+                        letter-spacing: 0.05em;
+                        font-size: 1.1vw;">Team</a></li>
                       <li>
-                        <a href="{% url 'about' %}" class="link">About Us</a>
+                        <a href="{% url 'about' %}" class="link" style="color: white;
+                        text-decoration: none;
+                        font-weight: 600;
+                        letter-spacing: 0.05em;
+                        font-size: 1.1vw;">About Us</a>
                       </li>
                     </ul>
                   </div>
